@@ -1,0 +1,21 @@
+.search-image {
+  width: 50%;
+}
+
+.empty-state-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .empty-state-container {
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-image {
+    width: 100%;
+  }
+}

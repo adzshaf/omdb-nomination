@@ -27,6 +27,28 @@ h6 {
   src: url("./fonts/PlayfairDisplay-Bold.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: url("./fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: normal;
+  src: url("./fonts/Poppins-Regular.ttf") format("truetype");
+}
+
 h1 {
   font-family: "Playfair Display";
+}
+
+h2 {
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+p {
+  font-family: "Poppins";
+  font-weight: normal;
 }
