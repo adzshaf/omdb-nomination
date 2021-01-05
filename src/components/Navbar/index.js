@@ -5,6 +5,9 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <h1>The Shoppies</h1>
+      <div className="input-container">
+        <input placeholder="Search movie title"></input>
+      </div>
     </div>
   );
 };
