@@ -12,17 +12,37 @@
 
 .input-container {
   margin-left: 20px;
-  padding: 5px 10px;
   flex-grow: 100;
   border: solid 1px #c4cdd5;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.input-container > input {
+.input-container > div > input {
   margin-left: 4px;
-  box-sizing: border-box;
-  width: 100%;
   font-family: "Poppins";
   border: none;
+}
+
+.search-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-result {
+  background: #ffffff;
+  padding: 5px 10px;
+}
+
+.icon-input {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  align-items: center;
+}
+
+.search-item {
+  display: flex;
+  flex-direction: row;
 }
