@@ -87,7 +87,7 @@ const Navbar = () => {
                 <div key={index} className="search-item">
                   <p className="search-item-title">{value.Title}</p>
                   <p className="search-item-year">({value.Year})</p>
-                  {!nomination.includes(value) && nomination.length < 5 && (
+                  {!nomination.some((item) => item.imdbID === value.imdbID) && (
                     <Button onClick={() => dispatch(addNomination(value))}>
                       Nominate
                     </Button>
