@@ -9,3 +9,14 @@
 .movie-cards > div {
   margin-right: 12px;
 }
+
+@media only screen and (max-width: 768px) {
+  .movie-cards {
+    flex-direction: column;
+  }
+
+  .movie-cards > div {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+}
