@@ -17,6 +17,7 @@ const NominationSection = () => {
         title={value.Title}
         imageSource={value.Poster}
         year={value.Year}
+        onClick={() => dispatch(removeNomination(value.imdbID))}
       />
     ))
   ) : (

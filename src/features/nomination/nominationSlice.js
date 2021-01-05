@@ -15,8 +15,12 @@ export const nominationSlice = createSlice({
         state.value.push(action.payload);
       }
     },
-    removeNomination: (state) => {
-      state.value -= 1;
+    removeNomination: (state, action) => {
+      let result = state.value.filter(function (element) {
+        return element.imdbID != action.payload;
+      });
+
+      state.value = result;
     },
   },
 });
