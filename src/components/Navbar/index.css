@@ -16,23 +16,32 @@
   border: solid 1px #c4cdd5;
   display: flex;
   flex-direction: column;
-}
-
-.input-container > div > input {
-  margin-left: 4px;
-  font-family: "Poppins";
-  border: none;
+  width: 100%;
+  position: relative;
 }
 
 .search-input {
   display: flex;
   flex-direction: column;
-  width: 100%;
+}
+
+.search-input > input {
+  margin-left: 4px;
+  font-family: "Poppins";
+  border: none;
 }
 
 .search-result {
   background: #ffffff;
-  padding: 5px 10px;
+  padding: 5px 0px;
+  position: absolute;
+  top: 32px;
+  width: inherit;
+  border: solid 1px #c4cdd5;
+}
+
+.search-result > p {
+  padding-left: 10px;
 }
 
 .icon-input {
@@ -45,4 +54,5 @@
 .search-item {
   display: flex;
   flex-direction: row;
+  padding-left: 10px;
 }
