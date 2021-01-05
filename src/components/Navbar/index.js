@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
+import apiService from "../../api/index";
 
 const Navbar = () => {
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    apiService
+      .getSearch(search)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }, [search]);
+
   return (
     <div className="navbar-container">
       <h1>The Shoppies</h1>
@@ -37,7 +47,10 @@ const Navbar = () => {
           </mask>
           <g mask="url(#mask0)"></g>
         </svg>
-        <input placeholder="Search movie title"></input>
+        <input
+          placeholder="Search movie title"
+          onChange={(e) => setSearch(e.target.value)}
+        ></input>
       </div>
     </div>
   );
