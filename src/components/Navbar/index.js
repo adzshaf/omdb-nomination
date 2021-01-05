@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./index.css";
 import apiService from "../../api/index";
+import { useDebounce } from "../../hooks/useDebounce";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
+
+  const debouncedSearchTerm = useDebounce(search, 1000);
 
   useEffect(() => {
-    if (search !== "") {
+    setIsSearching(true);
+    if (debouncedSearchTerm) {
       apiService
         .getSearch(search)
         .then((res) => {
+          setIsSearching(false);
           if (res.data.Response === "False") {
             setResult(res.data.Error);
           } else {
@@ -19,7 +25,7 @@ const Navbar = () => {
         })
         .catch((err) => console.log(err));
     }
-  }, [search]);
+  }, [debouncedSearchTerm]);
 
   return (
     <div className="navbar-container">
@@ -66,7 +72,9 @@ const Navbar = () => {
         </div>
         {search !== "" && (
           <div className="search-result">
-            {Array.isArray(result) ? (
+            {isSearching ? (
+              <p>Searching..</p>
+            ) : Array.isArray(result) ? (
               result.map((value, index) => (
                 <div key={index} className="search-item">
                   <p>{value.Title}</p>
