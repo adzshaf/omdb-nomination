@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import apiService from "../../api/index";
 import { useDebounce } from "../../hooks/useDebounce";
+import Button from "../Button";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -77,8 +78,9 @@ const Navbar = () => {
             ) : Array.isArray(result) ? (
               result.map((value, index) => (
                 <div key={index} className="search-item">
-                  <p>{value.Title}</p>
-                  <p>({value.Year})</p>
+                  <p className="search-item-title">{value.Title}</p>
+                  <p className="search-item-year">({value.Year})</p>
+                  <Button>Nominate</Button>
                 </div>
               ))
             ) : (

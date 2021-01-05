@@ -59,5 +59,14 @@
 .search-item {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding-left: 10px;
+}
+
+.search-item-title {
+  margin-right: 4px;
+}
+
+.search-item-year {
+  margin-right: 4px;
 }

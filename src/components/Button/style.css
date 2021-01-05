@@ -1,0 +1,16 @@
+button {
+  height: 36px;
+  cursor: pointer;
+}
+
+.default {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  border: 1px solid #c4cdd5;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+  border-radius: 3px;
+}
+
+.default > p {
+  margin: 0;
+}
