@@ -6,19 +6,19 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
 
-  console.log(result);
-
   useEffect(() => {
-    apiService
-      .getSearch(search)
-      .then((res) => {
-        if (res.data.Response === "False") {
-          setResult(res.data.Error);
-        } else {
-          setResult(res.data.Search);
-        }
-      })
-      .catch((err) => console.log(err));
+    if (search !== "") {
+      apiService
+        .getSearch(search)
+        .then((res) => {
+          if (res.data.Response === "False") {
+            setResult(res.data.Error);
+          } else {
+            setResult(res.data.Search);
+          }
+        })
+        .catch((err) => console.log(err));
+    }
   }, [search]);
 
   return (
@@ -64,18 +64,20 @@ const Navbar = () => {
             ></input>
           </div>
         </div>
-        <div className="search-result">
-          {Array.isArray(result) ? (
-            result.map((value, index) => (
-              <div key={index} className="search-item">
-                <p>{value.Title}</p>
-                <p>({value.Year})</p>
-              </div>
-            ))
-          ) : (
-            <p>{result}</p>
-          )}
-        </div>
+        {search !== "" && (
+          <div className="search-result">
+            {Array.isArray(result) ? (
+              result.map((value, index) => (
+                <div key={index} className="search-item">
+                  <p>{value.Title}</p>
+                  <p>({value.Year})</p>
+                </div>
+              ))
+            ) : (
+              <p>{result}</p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
