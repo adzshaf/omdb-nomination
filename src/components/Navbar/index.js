@@ -3,14 +3,10 @@ import "./index.css";
 import apiService from "../../api/index";
 import { useDebounce } from "../../hooks/useDebounce";
 import Button from "../Button";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  addNomination,
-  selectNomination,
-} from "../../features/nomination/nominationSlice";
+import { useDispatch } from "react-redux";
+import { addNomination } from "../../features/nomination/nominationSlice";
 
 const Navbar = () => {
-  const nomination = useSelector(selectNomination);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");

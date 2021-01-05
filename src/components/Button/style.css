@@ -14,3 +14,13 @@ button {
 .default > p {
   margin: 0;
 }
+
+.danger-button {
+  background: #e54b4b;
+  border-radius: 3px;
+}
+
+.danger-button > p {
+  margin: 0;
+  color: #ffffff;
+}

@@ -1,9 +1,12 @@
 import React from "react";
 import "./style.css";
 
-const Button = ({ children, onClick }) => {
+const Button = ({ children, onClick, danger }) => {
   return (
-    <button className="default" onClick={onClick}>
+    <button
+      className={`${danger ? "danger-button" : "default"}`}
+      onClick={onClick}
+    >
       <p>{children}</p>
     </button>
   );
