@@ -3,6 +3,17 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  background: #f9fafb;
+  border: 1px solid #dfe3e8;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+button:disabled > p {
+  color: #919eab;
+}
+
 .default {
   background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
   border: 1px solid #c4cdd5;

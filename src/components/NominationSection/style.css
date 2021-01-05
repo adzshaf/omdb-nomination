@@ -1,0 +1,11 @@
+.movie-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.movie-cards > div {
+  margin-right: 12px;
+}
