@@ -23,6 +23,7 @@
 .search-input {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .search-input > input {
