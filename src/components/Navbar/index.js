@@ -3,10 +3,14 @@ import "./index.css";
 import apiService from "../../api/index";
 import { useDebounce } from "../../hooks/useDebounce";
 import Button from "../Button";
-import { useDispatch } from "react-redux";
-import { addNomination } from "../../features/nomination/nominationSlice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addNomination,
+  selectNomination,
+} from "../../features/nomination/nominationSlice";
 
 const Navbar = () => {
+  const nomination = useSelector(selectNomination);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
@@ -83,9 +87,11 @@ const Navbar = () => {
                 <div key={index} className="search-item">
                   <p className="search-item-title">{value.Title}</p>
                   <p className="search-item-year">({value.Year})</p>
-                  <Button onClick={() => dispatch(addNomination(value))}>
-                    Nominate
-                  </Button>
+                  {!nomination.includes(value) && nomination.length < 5 && (
+                    <Button onClick={() => dispatch(addNomination(value))}>
+                      Nominate
+                    </Button>
+                  )}
                 </div>
               ))
             ) : (
