@@ -1,19 +1,15 @@
 import React from "react";
-import NominationSection from "./components/NominationSection";
-import Navbar from "./components/Navbar";
-import "./App.css";
-import Banner from "./components/Banner";
-import { useSelector } from "react-redux";
-import { selectNomination } from "./features/nomination/nominationSlice";
+import MainPage from "./pages";
+import SharePage from "./pages/SharePage";
+import { Router } from "@reach/router";
 
 function App() {
-  const nomination = useSelector(selectNomination);
-
   return (
     <div className="App">
-      {nomination.length === 5 && <Banner />}
-      <Navbar />
-      <NominationSection />
+      <Router>
+        <MainPage path="/" />
+        <SharePage path="/share/:shareId" />
+      </Router>
     </div>
   );
 }
