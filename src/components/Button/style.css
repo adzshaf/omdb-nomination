@@ -33,6 +33,20 @@ button:disabled > p {
   margin: 0;
 }
 
+.default:active {
+  background: #f4f6f8;
+  border: 1px solid #c4cdd5;
+  box-sizing: border-box;
+  box-shadow: inset 0px 1px 1px rgba(99, 115, 129, 0.601081),
+    inset 0px 1px 4px rgba(99, 115, 129, 0.197945);
+}
+
+.default:focus {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  border: 2px solid #5c6ac4;
+  box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+}
+
 .danger-button {
   background: linear-gradient(180deg, #e33719 0%, #d63418 100%);
   border: 1px solid #bf0711;
@@ -53,4 +67,18 @@ button:disabled > p {
   box-sizing: border-box;
   box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
     inset 0px 1px 0px 1px rgba(255, 255, 255, 0.0869282);
+}
+
+.danger-button:active {
+  background: linear-gradient(180deg, #c43016 3.35%, #b82d14 100%);
+  border: 1px solid #8f000c;
+  box-sizing: border-box;
+  box-shadow: inset 0px 2px 1px rgba(51, 2, 2, 0.125991);
+}
+
+.danger-button:focus {
+  background: linear-gradient(180deg, #e33719 0%, #d63418 100%);
+  border: 2px solid #91060d;
+  box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+    inset 0px 1px 0px 2px rgba(255, 255, 255, 0.0869282);
 }
