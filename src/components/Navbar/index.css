@@ -36,6 +36,10 @@
   border: none;
 }
 
+.search-input > input:focus {
+  border: 1px solid #5c6ac4;
+}
+
 .search-result {
   background: #ffffff;
   padding: 5px 0px;
