@@ -9,9 +9,11 @@ const MovieCard = ({ imageSource, title, year, onClick, isShared }) => {
         <h2>{title}</h2>
         <p>({year})</p>
         {!isShared && (
-          <Button danger onClick={onClick}>
-            Remove
-          </Button>
+          <div className="movie-card-button">
+            <Button danger onClick={onClick}>
+              Remove
+            </Button>
+          </div>
         )}
       </div>
     </div>

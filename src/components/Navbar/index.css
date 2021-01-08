@@ -75,3 +75,9 @@
 .search-item-year {
   margin-right: 4px;
 }
+
+@media only screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+}
