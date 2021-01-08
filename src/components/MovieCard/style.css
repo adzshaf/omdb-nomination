@@ -26,3 +26,14 @@
 .movie-card-button > button {
   width: 200px;
 }
+
+.movie-card-not-available {
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  height: 425px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dfe3e8;
+}
