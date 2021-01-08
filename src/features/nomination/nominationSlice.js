@@ -4,6 +4,7 @@ export const nominationSlice = createSlice({
   name: "nomination",
   initialState: {
     value: [],
+    id: [],
   },
   reducers: {
     addNomination: (state, action) => {
@@ -13,14 +14,22 @@ export const nominationSlice = createSlice({
       // immutable state based off those changes
       if (state.value.length < 5) {
         state.value.push(action.payload);
+        state.id.push(action.payload.imdbID);
       }
     },
     removeNomination: (state, action) => {
       let result = state.value.filter(function (element) {
-        return element.imdbID != action.payload;
+        return element.imdbID !== action.payload;
       });
 
+      let ids = state.id.filter(function (element) {
+        return element !== action.payload;
+      });
+
+      console.log(ids);
+
       state.value = result;
+      state.id = ids;
     },
   },
 });
@@ -31,5 +40,6 @@ export const { addNomination, removeNomination } = nominationSlice.actions;
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state) => state.counter.value)`
 export const selectNomination = (state) => state.nomination.value;
+export const selectNominationId = (state) => state.nomination.id;
 
 export default nominationSlice.reducer;

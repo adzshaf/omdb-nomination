@@ -43,6 +43,7 @@
   top: 32px;
   width: inherit;
   border: solid 1px #c4cdd5;
+  z-index: 3;
 }
 
 .search-result > p {
