@@ -29,7 +29,7 @@ const NominationSection = ({ isShared, data }) => {
         .then(
           axios.spread((...responses) => {
             responses.map((value) => {
-              dataArray.push(value.data);
+              return dataArray.push(value.data);
             });
             setMovieData(dataArray);
           })
@@ -39,7 +39,7 @@ const NominationSection = ({ isShared, data }) => {
         });
       setLoading(false);
     }
-  }, []);
+  }, [data, isShared]);
 
   if (isShared) {
     return loading ? (
