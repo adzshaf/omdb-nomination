@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./index.css";
-import apiService from "../../api/index";
+import { getSearch } from "../../api/index";
 import { useDebounce } from "../../hooks/useDebounce";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import Button from "../Button";
@@ -28,8 +28,7 @@ const Navbar = () => {
   useEffect(() => {
     setIsSearching(true);
     if (debouncedSearchTerm) {
-      apiService
-        .getSearch(search)
+      getSearch(search)
         .then((res) => {
           setIsSearching(false);
           if (res.data.Response === "False") {
@@ -40,7 +39,7 @@ const Navbar = () => {
         })
         .catch((err) => console.log(err));
     }
-  }, [debouncedSearchTerm]);
+  }, [search, debouncedSearchTerm]);
 
   return (
     <div className="navbar-container">

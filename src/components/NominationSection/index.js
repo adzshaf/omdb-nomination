@@ -7,7 +7,7 @@ import {
 import { useState, useEffect } from "react";
 import EmptyState from "../EmptyState";
 import "./style.css";
-import apiService from "../../api";
+import { getById } from "../../api";
 import axios from "axios";
 
 const NominationSection = ({ isShared, data }) => {
@@ -22,7 +22,7 @@ const NominationSection = ({ isShared, data }) => {
       setLoading(true);
       let idArray = [];
       let dataArray = [];
-      data.map((value) => idArray.push(apiService.getById(value)));
+      data.map((value) => idArray.push(getById(value)));
 
       axios
         .all(idArray)

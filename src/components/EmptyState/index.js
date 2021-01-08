@@ -5,7 +5,7 @@ import "./style.css";
 const EmptyState = () => {
   return (
     <div className="empty-state-container">
-      <img src={Search} className="search-image" />
+      <img src={Search} className="search-image" alt="empty-state" />
       <div>
         <h2>You haven't nominated yet!</h2>
         <p>Add your favorite movies to be nominated</p>

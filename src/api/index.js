@@ -8,8 +8,8 @@ const apiConstant = {
 
 const API = `${apiConstant.API_BASE_URL}?`;
 
-export default {
-  getById: (id) => axios.get(`${API}i=${id}&apikey=${API_KEY}&type=movie`),
-  getSearch: (search) =>
-    axios.get(`${API}s=${search}&apikey=${API_KEY}&type=movie`),
-};
+const getById = (id) => axios.get(`${API}i=${id}&apikey=${API_KEY}&type=movie`);
+const getSearch = (search) =>
+  axios.get(`${API}s=${search}&apikey=${API_KEY}&type=movie`);
+
+export { getById, getSearch };
