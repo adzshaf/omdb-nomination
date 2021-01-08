@@ -9,6 +9,7 @@ import EmptyState from "../EmptyState";
 import "./style.css";
 import { getById } from "../../api";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const NominationSection = ({ isShared, data }) => {
   const nomination = useSelector(selectNomination);
@@ -67,7 +68,10 @@ const NominationSection = ({ isShared, data }) => {
             imageSource={value.Poster}
             year={value.Year}
             isShared={false}
-            onClick={() => dispatch(removeNomination(value.imdbID))}
+            onClick={() => {
+              dispatch(removeNomination(value.imdbID));
+              toast("Successfully deleted your nomination!", { icon: "🗑️" });
+            }}
           />
         ))}
       </div>
