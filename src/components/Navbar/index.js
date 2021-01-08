@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./index.css";
 import apiService from "../../api/index";
 import { useDebounce } from "../../hooks/useDebounce";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import Button from "../Button";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -17,6 +18,12 @@ const Navbar = () => {
   const [isSearching, setIsSearching] = useState(false);
 
   const debouncedSearchTerm = useDebounce(search, 1000);
+
+  const ref = useRef();
+
+  const [isSearchOpen, setSearchOpen] = useState(false);
+
+  useOnClickOutside(ref, () => setSearchOpen(false));
 
   useEffect(() => {
     setIsSearching(true);
@@ -38,7 +45,7 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <h1>The Shoppies</h1>
-      <div className="input-container">
+      <div className="input-container" ref={ref}>
         <div className="icon-input">
           <svg
             width="20"
@@ -74,11 +81,14 @@ const Navbar = () => {
           <div className="search-input">
             <input
               placeholder="Search movie title"
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                setSearchOpen(true);
+              }}
             ></input>
           </div>
         </div>
-        {search !== "" && (
+        {search !== "" && isSearchOpen && (
           <div className="search-result">
             {isSearching ? (
               <p>Searching..</p>
