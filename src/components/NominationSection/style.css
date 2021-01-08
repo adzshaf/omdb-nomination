@@ -13,6 +13,7 @@
 @media only screen and (max-width: 768px) {
   .movie-cards {
     flex-direction: column;
+    align-items: center;
   }
 
   .movie-cards > div {

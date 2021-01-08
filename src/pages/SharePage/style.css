@@ -1,0 +1,7 @@
+.share-container {
+  text-align: center;
+}
+
+.share-container > h2 {
+  padding-top: 40px;
+}
