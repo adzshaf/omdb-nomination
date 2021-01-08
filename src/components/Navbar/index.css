@@ -80,4 +80,8 @@
   .navbar-container {
     flex-direction: column;
   }
+
+  .input-container {
+    margin-left: 0;
+  }
 }
