@@ -3,6 +3,13 @@ button {
   cursor: pointer;
 }
 
+.default:hover {
+  background: linear-gradient(180deg, #fafbfc 0%, #ebeff2 100%);
+  border: 1px solid #c4cdd5;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+}
+
 button:disabled {
   background: #f9fafb;
   border: 1px solid #dfe3e8;
@@ -27,11 +34,23 @@ button:disabled > p {
 }
 
 .danger-button {
-  background: #e54b4b;
+  background: linear-gradient(180deg, #e33719 0%, #d63418 100%);
+  border: 1px solid #bf0711;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+    inset 0px 1px 0px 1px rgba(255, 255, 255, 0.0869282);
   border-radius: 3px;
 }
 
 .danger-button > p {
   margin: 0;
   color: #ffffff;
+}
+
+.danger-button:hover {
+  background: linear-gradient(180deg, #d93518 0%, #cc3216 100%);
+  border: 1px solid #b50710;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+    inset 0px 1px 0px 1px rgba(255, 255, 255, 0.0869282);
 }
