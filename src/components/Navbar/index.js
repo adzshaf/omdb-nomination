@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./index.css";
+import "./style.css";
 import { getSearch } from "../../api/index";
 import { useDebounce } from "../../hooks/useDebounce";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
