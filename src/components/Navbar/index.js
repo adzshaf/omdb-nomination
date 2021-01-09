@@ -9,6 +9,7 @@ import {
   addNomination,
   selectNomination,
 } from "../../features/nomination/nominationSlice";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const nomination = useSelector(selectNomination);
@@ -100,7 +101,12 @@ const Navbar = () => {
                     (nomination.some((item) => item.imdbID === value.imdbID) ? (
                       <Button disabled>Nominate</Button>
                     ) : (
-                      <Button onClick={() => dispatch(addNomination(value))}>
+                      <Button
+                        onClick={() => {
+                          dispatch(addNomination(value));
+                          toast.success("Successfully added nomination!");
+                        }}
+                      >
                         Nominate
                       </Button>
                     ))}
